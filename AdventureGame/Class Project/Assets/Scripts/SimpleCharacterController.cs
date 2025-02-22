@@ -44,7 +44,6 @@ public class SimpleCharacterController : MonoBehaviour
 
 	private void ApplyGravity()
 	{
-		print(controller.isGrounded);
 		if (!controller.isGrounded)
 		{
             velocity.y += gravity * Time.deltaTime;
