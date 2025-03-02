@@ -35,12 +35,17 @@ public class CharacterAnimationController : MonoBehaviour
 			animator.SetTrigger("Hit");
 		}
 
-		// Handle Fall
-		if (Input.GetKeyDown(KeyCode.F))
+        // Handle Fall
+        /*if (!controller.isGrounded)
+        {
+            animator.SetTrigger("Fall");
+        }
+		*/
+        if (Input.GetKeyDown(KeyCode.F))
 		{
 			animator.SetTrigger("Fall");
 		}
-
+		
 		// Handle Jumping
 		if (Input.GetKey(KeyCode.Space))
 		{
@@ -51,7 +56,7 @@ public class CharacterAnimationController : MonoBehaviour
 			animator.SetBool("Jump", false);
 		}
 
-		//// Handle Double Jumping
+		// Handle Double Jumping
 		if (Input.GetKeyDown(KeyCode.C))
 		{
 			animator.SetTrigger("Double Jump");
