@@ -6,6 +6,8 @@ public class SimpleCharacterController : MonoBehaviour
 	public float moveSpeed = 5f;
 	public float jumpForce = 8f;
 	public float gravity = -9.81f;
+	public ManaContainer manaData;
+	public SimpleImageBehavior image;
 
 	private CharacterController controller;
 	private Transform thisTransform;
@@ -26,6 +28,7 @@ public class SimpleCharacterController : MonoBehaviour
 		MoveCharacter();
 		ApplyGravity();
 		KeepCharacterOnZAxis();
+		ManageOtherInput();
     }
 
 	private void MoveCharacter()
@@ -62,5 +65,14 @@ public class SimpleCharacterController : MonoBehaviour
 		Vector3 currentPosition = thisTransform.position;
 		currentPosition.z = 0f;
 		thisTransform.position = currentPosition;
+	}
+
+	public void ManageOtherInput()
+	{
+		if (Input.GetKeyDown(KeyCode.V))
+		{
+			manaData.ReduceMana(-0.1f);
+			image.UpdateWithFloatData();
+		}
 	}
 }
