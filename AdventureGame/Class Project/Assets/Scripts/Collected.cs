@@ -12,7 +12,6 @@ public class Collected : MonoBehaviour
 
     public void PlayAnimation()
     {
-        print("collected");
         anim.SetTrigger("Collected");
         GetComponent<SphereCollider>().enabled = false;
     }
