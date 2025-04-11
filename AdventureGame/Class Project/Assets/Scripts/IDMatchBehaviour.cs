@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,16 +9,21 @@ public class IDMatchBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var otherID = other.GetComponent<IDMatchBehaviour>();
+        if (otherID != null)
+        {
+            Debug.Log("ID is null: ");
+            return;
+        }
 
         if (otherID.id == id)
         {
-            matchEvent.Invoke();
             Debug.Log("Matched ID: " + id);
+            matchEvent.Invoke();
         }
         else
         {
-            noMatchEvent.Invoke();
             Debug.Log("No Match: " + id);
+            noMatchEvent.Invoke();
         }
     }
 }
