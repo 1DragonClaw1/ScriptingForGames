@@ -11,6 +11,7 @@ public class SimpleCharacterController : MonoBehaviour
     public SimpleImageBehavior image;
     public HealthContainer healthContainer;
     public GameObject youWin;
+    public ScoreContainer scoreContainer;
 
     private CharacterController controller;
     private Transform thisTransform;
@@ -22,6 +23,7 @@ public class SimpleCharacterController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         thisTransform = transform;
+        scoreContainer.SetScore(0);
     }
 
     // Update is called once per frame

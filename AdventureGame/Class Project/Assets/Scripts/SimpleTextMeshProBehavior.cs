@@ -13,7 +13,7 @@ public class SimpleTextMeshProBehavior : MonoBehaviour
     void Start()
     {
         textObj = GetComponent<TextMeshProUGUI>();
-        UpdateWithIntData();
+        textObj.text = "Score: 0";
     }
 
     // Update is called once per frame
