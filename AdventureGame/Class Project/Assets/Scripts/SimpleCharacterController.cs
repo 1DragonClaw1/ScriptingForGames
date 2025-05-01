@@ -33,7 +33,7 @@ public class SimpleCharacterController : MonoBehaviour
         KeepCharacterOnZAxis();
         ManageOtherInput();
 
-        if (transform.position.y < -8f || healthContainer.healthData.value <= 0)
+        if (transform.position.y < -6f || healthContainer.healthData.value <= 0)
         {
             Die();
         }
